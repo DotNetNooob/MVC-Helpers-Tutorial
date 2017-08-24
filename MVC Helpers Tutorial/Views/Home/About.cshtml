@@ -1,0 +1,27 @@
+﻿@{
+    ViewBag.Title = "About";
+}
+<h2>@ViewBag.Title.</h2>
+<h3>@ViewBag.Message</h3>
+
+<p>Use this area to provide additional information.</p>
+
+@using (Html.BeginForm("About", "Home"))
+{
+    @*<label for="firstName">First Name:</label>*@
+    @Html.Raw(@Html.LabelCustom("firstName", "First Name:"))
+    <br />
+    <input id="firstName" name="firstName" type="text" value="" />
+    <br /><br />
+    @*@Html.Raw(@Html.LabelCustom("lastName", "Last Name:"))*@
+
+    @Html.LabelCustomTagBuilder("lastName", "Last Name")
+    <br />
+    <input id="lastName" name="lastName" type="text" value="" />
+    <br /><br />
+
+    @*@Html.Image("/Images/a.jpg", "alt text", "400");
+        <br /><br />*@
+
+    <input id="btnRegister" name="btnRegister" type="submit" value="Register" />
+}
